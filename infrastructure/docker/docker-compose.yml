@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  go-api-sample:
+    build:
+      context: ./go-api-sample/
+      dockerfile: Dockerfile
+    container_name: "go-api-sample"
+    volumes:
+      - ../../:/go-api-sample
+    ports:
+      - 3333:8080
+    tty: true
+    privileged: true
