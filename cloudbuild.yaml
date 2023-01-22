@@ -12,10 +12,10 @@ steps:
       - "--image"
       - "${_IMAGE_NAME}"
       - "--region"
-      - "${_CLOUNDRUN_REGION}"
+      - "${_CLOUDRUN_REGION}"
 
 substitutions:
-  _IMAGE_NAME: "${_CLOUNDRUN_REGION}-docker.pkg.dev/${PROJECT_ID}/${_CLOUDRUN_REPOSITORY}/${_CLOUDRUN_IMAGE}:${COMMIT_SHA}"
+  _IMAGE_NAME: "${_CLOUDRUN_REGION}-docker.pkg.dev/${PROJECT_ID}/${_CLOUDRUN_REPOSITORY}/${_CLOUDRUN_IMAGE}:${COMMIT_SHA}"
 
 images:
   - "${_IMAGE_NAME}"
