@@ -16,13 +16,13 @@ variable "service_name" {
 }
 
 resource "google_cloud_run_service" "terra-test-cloudrun-sample" {
-  name     = var.service_name
-  location = var.location
+  name                       = var.service_name
+  location                   = var.location
   autogenerate_revision_name = true
 
   template {
     spec {
-      timeout_seconds       = 300
+      timeout_seconds = 300
       # 同時接続数:トラフィックに対してのシステムの負荷強度によって変える
       container_concurrency = 80
       containers {

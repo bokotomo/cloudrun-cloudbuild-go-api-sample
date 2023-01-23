@@ -27,6 +27,7 @@ module "artifact_registry" {
 # 先にGCPでプロジェクトをGithubリポジトリ認証する必要あり
 module "cloudbuild" {
   source              = "./module/cloudbuild"
+  name                = "cloudbuild-sample-api"
   location            = "global"
   description         = "cloudrun sample codebuild"
   cloudrun_location   = local.region
@@ -34,6 +35,9 @@ module "cloudbuild" {
   cloudrun_repository = local.repository_id
   hostname            = "asia.gcr.io"
   service_name        = local.cloudrun_service_name
+  github_owner        = "bokotomo"
+  github_name         = "cloudrun-cloudbuild-go-api-sample"
+  github_push_branch  = "^main$"
 }
 
 # cloudrunにサービスを作成する
