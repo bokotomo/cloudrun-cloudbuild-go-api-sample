@@ -37,11 +37,11 @@ resource "google_cloudbuild_trigger" "cloudbuild_sample_api" {
   name        = "cloudbuild-sample-api"
   filename    = "cloudbuild.yaml"
   substitutions = {
-    _CLOUDRUN_IMAGE      = var.cloudrun_image
-    _CLOUDRUN_REPOSITORY = var.cloudrun_repository
-    _CLOUDRUN_REGION     = var.cloudrun_location
-    _DEPLOY_REGION       = var.cloudrun_location
-    _GCR_HOSTNAME        = var.hostname
+    _CLOUDRUN_IMAGE        = var.cloudrun_image
+    _CLOUDRUN_REPOSITORY   = var.cloudrun_repository
+    _CLOUDRUN_REGION       = var.cloudrun_location
+    _DEPLOY_REGION         = var.cloudrun_location
+    _GCR_HOSTNAME          = var.hostname
     _SERVICE_CLOUDRUN_NAME = var.service_name
   }
 
