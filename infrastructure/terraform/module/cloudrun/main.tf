@@ -1,20 +1,6 @@
 #
 # Cloud Run
 #
-
-variable "location" {
-  description = "location"
-  type        = string
-}
-variable "image" {
-  description = "image"
-  type        = string
-}
-variable "service_name" {
-  description = "cloud run service name"
-  type        = string
-}
-
 resource "google_cloud_run_service" "terra-test-cloudrun-sample" {
   name                       = var.service_name
   location                   = var.location
